@@ -89,6 +89,25 @@ ylabel('Bacon')
 legend()
 
 
+# In[25]:
+
+
+from sci378 import *
+
+
+# In[26]:
+
+
+x=linspace(2,10,500)
+y=5*x**2-2*x+3
+plot(x,y,'-',label='$5x^2-2x+3$')
+
+plot(x,2*y,'-',label='$10x^2-4x+6$')
+xlabel('Time')
+ylabel('Bacon')
+legend()
+
+
 # In[ ]:
 
 
