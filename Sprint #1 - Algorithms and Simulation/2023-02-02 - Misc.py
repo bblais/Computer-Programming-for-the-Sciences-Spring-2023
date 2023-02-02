@@ -13,6 +13,18 @@ while x<20:
 print("done.")
 
 
+# In[2]:
+
+
+from pylab import *
+
+
+# In[3]:
+
+
+rand(20)
+
+
 # In[ ]:
 
 
