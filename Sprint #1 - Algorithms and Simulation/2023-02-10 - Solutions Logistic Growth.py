@@ -12,6 +12,12 @@ from sci378 import *
 # $$
 # \frac{dx}{dt}=ax\left(1-\frac{x}{K}\right)
 # $$
+# 
+# multiply both sides by $dt$:
+# 
+# $$
+# dx=\left(ax\left(1-\frac{x}{K}\right)\right)\cdot dt
+# $$
 
 # ## set initial conditions for variables
 
