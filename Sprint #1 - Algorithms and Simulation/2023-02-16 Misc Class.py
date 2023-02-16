@@ -49,10 +49,10 @@ twinx()
 plot(x,y2,'rs-')
 
 
-# In[7]:
+# In[8]:
 
 
-plot(x,y1,'bo-')
+plot(x,y1,'o-',color='#587246')
 
 
 # In[ ]:
