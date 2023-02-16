@@ -18,7 +18,7 @@ from sci378 import *
 # $$
 # 
 
-# In[3]:
+# In[2]:
 
 
 p=2
@@ -46,14 +46,14 @@ t,p=S.arrays()
     
 
 
-# In[5]:
+# In[3]:
 
 
 figure(figsize=(10,4))
 plot(t,p)
 
 
-# In[8]:
+# In[4]:
 
 
 figure(figsize=(10,4))
@@ -142,6 +142,82 @@ plot(t,p,label=f'a={a}')
 
 
 legend()
+
+
+# In[ ]:
+
+
+
+
+
+# In[6]:
+
+
+for K in [10,20,30]:
+    p=2
+    t=0
+
+    a=0.5
+    #K=10
+
+    dt=0.01
+
+    S=Storage()
+
+    while t<30:
+
+        dp=(a*p*(1-p/K))*dt
+
+        p=p+dp
+        t=t+dt
+
+        S+=t,p
+
+
+    t,p=S.arrays()
+
+
+    plot(t,p,label=f'K={K}')
+
+
+
+
+    legend()    
+
+
+# In[9]:
+
+
+for K in [10,20,30]:
+    p=2
+    t=0
+
+    a=0.5
+    #K=10
+
+    dt=0.01
+
+    S=Storage()
+
+    while t<20:
+
+        dp=(a*p*(1-p/K))*dt
+
+        p=p+dp
+        t=t+dt
+
+        S+=t,p
+
+
+    t,p=S.arrays()
+
+
+    plot(t,p,label=f'K={K}')
+
+    plot([t.max()],[K],'o')
+
+
+    legend()    
 
 
 # In[ ]:
