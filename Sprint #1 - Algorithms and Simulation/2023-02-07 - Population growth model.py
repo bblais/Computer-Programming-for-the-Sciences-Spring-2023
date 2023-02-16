@@ -185,6 +185,41 @@ for K in [10,20,30]:
     legend()    
 
 
+# In[14]:
+
+
+for a in [10,15,20]:
+    p=2
+    t=0
+
+    #a=0.5
+    K=10
+
+    dt=0.01
+
+    S=Storage()
+
+    while t<30:
+
+        dp=(a*p*(1-p/K))*dt
+
+        p=p+dp
+        t=t+dt
+
+        S+=t,p
+
+
+    t,p=S.arrays()
+
+
+    plot(t,p,label=f'a={a}')
+
+
+
+
+    legend()    
+
+
 # In[9]:
 
 
