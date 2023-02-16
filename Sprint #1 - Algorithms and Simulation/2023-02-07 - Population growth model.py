@@ -220,6 +220,47 @@ for K in [10,20,30]:
     legend()    
 
 
+# In[11]:
+
+
+colors=['#587246','#EC7C26','#F80000']
+
+
+# In[12]:
+
+
+for color,K in zip(colors,[10,20,30]):
+    p=2
+    t=0
+
+    a=0.5
+    #K=10
+
+    dt=0.01
+
+    S=Storage()
+
+    while t<20:
+
+        dp=(a*p*(1-p/K))*dt
+
+        p=p+dp
+        t=t+dt
+
+        S+=t,p
+
+
+    t,p=S.arrays()
+
+
+    plot(t,p,label=f'K={K}',color=color)
+
+    plot([t.max()],[K],'o',color=color)
+
+
+    legend()    
+
+
 # In[ ]:
 
 

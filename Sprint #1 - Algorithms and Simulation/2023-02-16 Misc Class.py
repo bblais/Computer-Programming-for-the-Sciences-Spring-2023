@@ -49,6 +49,12 @@ twinx()
 plot(x,y2,'rs-')
 
 
+# In[7]:
+
+
+plot(x,y1,'bo-')
+
+
 # In[ ]:
 
 
