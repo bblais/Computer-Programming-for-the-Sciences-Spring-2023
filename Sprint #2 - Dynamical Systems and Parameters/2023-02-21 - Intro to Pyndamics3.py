@@ -27,7 +27,7 @@ from pyndamics3 import Simulation
 sim=Simulation()
 sim.add(" x' = a*x*(1-x/K) ",1,plot=True) # the 1 here is the initial value for x
 sim.params(a=2,K=50)
-sim.run(0,10)
+sim.run(0,10)  # this is how long the simulation should run -- how large of a value of t
 
 
 # ## Freefall
@@ -47,7 +47,7 @@ sim=Simulation()
 sim.add(" x' = v ",0,plot=True)  # the 0 is the initial value for x
 sim.add(" v' = g-k/m*v**2",0,plot=True) # the 0 is the initial value for v
 sim.params(g=10,m=1,k=3)
-sim.run(10)
+sim.run(10)  # this is how long the simulation should run -- how large of a value of t
 
 
 # ## Parameter exploration
@@ -61,7 +61,7 @@ sim=Simulation()
 sim.add(" x' = v ",0)  # the 0 is the initial value for x
 sim.add(" v' = g-k/m*v**2",0) # the 0 is the initial value for v
 sim.params(g=10,m=1,k=3)
-sim.run(10)
+sim.run(10) # this is how long the simulation should run -- how large of a value of t
 
 plot(sim.t,sim.v)
 
@@ -70,9 +70,27 @@ sim=Simulation()
 sim.add(" x' = v ",0)  # the 0 is the initial value for x
 sim.add(" v' = g-k/m*v**2",0) # the 0 is the initial value for v
 sim.params(g=10,m=1,k=.1)
-sim.run(10)
+sim.run(10) # this is how long the simulation should run -- how large of a value of t
 
 plot(sim.t,sim.v)
+
+
+# In[15]:
+
+
+for k in [1,3,6,9]:
+
+    sim=Simulation()
+    sim.add(" x' = v ",0)  # the 0 is the initial value for x
+    sim.add(" v' = g-k/m*v**2",0) # the 0 is the initial value for v
+    sim.params(g=10,m=1,k=k)
+    sim.run(5)  # this is how long the simulation should run -- how large of a value of t
+
+    plot(sim.t,sim.v,label=f"K={k}")
+
+xlabel('Time')
+ylabel('Speed')
+legend()
 
 
 # In[ ]:
