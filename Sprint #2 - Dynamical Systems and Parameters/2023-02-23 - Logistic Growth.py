@@ -121,13 +121,13 @@ sim.params(a=2,K=50,ay=1,Ky=100)
 sim.run(0,10)  # this is how long the simulation should run -- how large of a value of t
 
 
-# In[17]:
+# In[21]:
 
 
 sim=Simulation()
 sim.figsize=(8,4)
-sim.add(" x' = a*x*(1-x/K) ",1,plot=1) # the 1 here is the initial value for x
-sim.add(" y' = ay*x*(1-y/Ky) ",2,plot=1) # the 1 here is the initial value for y
+sim.add(" x' = a*x*(1-x/K) ",10,plot=1) # the 1 here is the initial value for x
+sim.add(" y' = ay*x*(1-y/Ky) ",10,plot=1) # the 1 here is the initial value for y
 sim.params(a=2,K=50,ay=1,Ky=100)
 sim.run(0,10)  # this is how long the simulation should run -- how large of a value of t
 
@@ -143,12 +143,14 @@ sim.params(a=2,K=50,ay=1,Ky=100)
 sim.run(0,10)  # this is how long the simulation should run -- how large of a value of t
 
 
-# In[20]:
+# In[23]:
 
 
 figure(figsize=(8,4))  # make small for the projector -- you don't need this line
-plot(sim.t,sim.x)
-plot(sim.t,sim.y)
+plot(sim.t,sim.x,label='bob')
+plot(sim.t,sim.y,label='sally')
+
+legend()
 
 
 # ## For greek symbols
