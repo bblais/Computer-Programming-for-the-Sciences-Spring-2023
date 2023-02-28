@@ -223,6 +223,28 @@ sim.params(γ=1)
 sim.run(0,10)  # this is how long the simulation should run -- how large of a value of t
 
 
+# In[30]:
+
+
+sim=Simulation()
+sim.figsize=(8,4)
+sim.add(" x' = a*x*(1-x/K) ",1,plot=True) # the 1 here is the initial value for x
+sim.params(a=2,K=20)
+sim.run(0,10)  # this is how long the simulation should run -- how large of a value of t
+
+
+# In[31]:
+
+
+import pyndamics3
+
+
+# In[32]:
+
+
+
+
+
 # In[ ]:
 
 

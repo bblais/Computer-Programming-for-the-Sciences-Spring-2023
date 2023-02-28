@@ -13,7 +13,7 @@ from pyndamics3 import Simulation
 # 
 # ![image.png](attachment:de8b16cf-b017-4a7a-8834-9342b651fb77.png)
 
-# In[9]:
+# In[2]:
 
 
 sim=Simulation()
@@ -23,7 +23,7 @@ sim.params(α=1.1 ,β=0.4, δ=.1, γ=.4 )
 sim.run(100)
 
 
-# In[10]:
+# In[3]:
 
 
 sim=Simulation()
@@ -36,7 +36,7 @@ plot(sim.t,sim.x)
 plot(sim.t,sim.y)
 
 
-# In[11]:
+# In[4]:
 
 
 sim=Simulation()
@@ -44,6 +44,28 @@ sim.add(" x' = α*x - β*x*y",10,plot=1)
 sim.add(" y' = δ*x*y-γ*y",10,plot=1)
 sim.params(α=1.1 ,β=0.4, δ=.1, γ=.4 )
 sim.run(100)
+
+
+# ## Not needed for the solution but cool anyway
+
+# In[5]:
+
+
+import pyndamics3
+
+
+# In[8]:
+
+
+pyndamics3.phase_plot(sim,'x','y')
+plot([0],[0],'ro')
+plot([sim.γ/sim.δ],[sim.α/sim.β],'ro')
+
+
+# In[11]:
+
+
+pyndamics3.vector_field(sim,rescale=True,x=linspace(0,30,20),y=linspace(0,15,20))
 
 
 # In[ ]:
