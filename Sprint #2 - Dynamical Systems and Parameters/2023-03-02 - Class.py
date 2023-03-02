@@ -99,12 +99,6 @@ plot(t,x,'b-')
 plot(t_data,x_data,'co-')
 
 
-# In[46]:
-
-
-get_ipython().run_line_magic('pinfo2', 'plot')
-
-
 # In[ ]:
 
 
