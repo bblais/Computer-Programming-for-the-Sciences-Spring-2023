@@ -59,16 +59,62 @@ x_data=randn(len(t_data))+300
 plot(t_data,x_data,'o')
 
 
-# In[26]:
+# In[40]:
 
 
 sim=Simulation()
-sim.add(" x' = v   ",290,plot=True)
+sim.add(" x' = v   ",298,plot=True)
 sim.add(" v' = -k*(x-xo)/m",0)
-sim.params(k=2,m=1,xo=350)
+sim.params(k=2,m=1,xo=300)
 sim.add_data(t=t_data,x=x_data,plot=True)
 
 sim.run(1990,2000)
+
+
+# In[41]:
+
+
+t=sim.t
+x=sim.x
+plot(t,x,'b-')
+plot(t_data,x_data,'bo-')
+
+
+# In[45]:
+
+
+# all in one cell
+
+sim=Simulation()
+sim.add(" x' = v   ",298)
+sim.add(" v' = -k*(x-xo)/m",0)
+sim.params(k=20,m=1,xo=300)
+sim.add_data(t=t_data,x=x_data)
+
+sim.run(1990,2000)
+
+t=sim.t
+x=sim.x
+plot(t,x,'b-')
+plot(t_data,x_data,'co-')
+
+
+# In[46]:
+
+
+get_ipython().run_line_magic('pinfo2', 'plot')
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[30]:
