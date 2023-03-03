@@ -45,6 +45,60 @@ plot(sim.t,(.4/.1)*ones(len(sim.t)),'c--')
 plot(sim.t,(1.1/.4)*ones(len(sim.t)),'r--')
 
 
+# In[13]:
+
+
+sim=Simulation()
+sim.add(" x' = α*x - β*x*y",4.1)
+sim.add(" y' = δ*x*y-γ*y",3)
+sim.params(α=1.1 ,β=0.4, δ=.1, γ=.4 )
+sim.run(100)
+
+figure(figsize=(8,4))
+plot(sim.t,sim.x)
+plot(sim.t,sim.y)
+
+plot(sim.t,0*ones(len(sim.t)),'r--')
+
+# prey
+plot(sim.t,(sim.γ/sim.δ)*ones(len(sim.t)),'c--')
+
+# predator
+plot(sim.t,(1.1/.4)*ones(len(sim.t)),'r--')
+
+
+# In[14]:
+
+
+γ=.4
+δ=.1
+
+
+sim=Simulation()
+sim.add(" x' = α*x - β*x*y",γ/δ+.1)
+sim.add(" y' = δ*x*y-γ*y",3)
+sim.params(α=1.1 ,β=0.4, δ=δ, γ=γ )
+sim.run(100)
+
+figure(figsize=(8,4))
+plot(sim.t,sim.x)
+plot(sim.t,sim.y)
+
+plot(sim.t,0*ones(len(sim.t)),'r--')
+
+# prey
+plot(sim.t,(sim.γ/sim.δ)*ones(len(sim.t)),'c--')
+
+# predator
+plot(sim.t,(1.1/.4)*ones(len(sim.t)),'r--')
+
+
+# In[ ]:
+
+
+
+
+
 # In[10]:
 
 
