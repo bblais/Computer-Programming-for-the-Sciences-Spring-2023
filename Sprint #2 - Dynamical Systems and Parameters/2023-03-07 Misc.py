@@ -47,10 +47,11 @@ v0=5
 vmax=5
 
 
-# In[7]:
+# In[19]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
+from pylab import *
 from pyndamics3 import Simulation
 
 
@@ -101,4 +102,38 @@ sim.run(20)
 
 sim.add("v'= 5*v_max")
 sim.params(v_max=10)
+
+
+# In[ ]:
+
+
+sim.add("a = k*v_max*exp(-k*t)")
+
+
+# ## two sims in one
+
+# In[17]:
+
+
+sim=Simulation()
+sim.add("x'=v",0,plot=1)
+sim.add("v'=a",0,plot=2)
+sim.add("x2'=v2",0,plot=1)
+sim.add("v2'=a-k*v2**2",0,plot=2)
+sim.params(a=15,k=.1)
+sim.run(10)
+
+
+# In[20]:
+
+
+plot(sim.t,sim.v,'-',label="model 1")
+plot(sim.t,sim.v2,'--',label="model 2")
+legend()
+
+
+# In[ ]:
+
+
+
 
