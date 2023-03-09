@@ -63,6 +63,22 @@ ylim([0,5])
 .1+.2 == .3
 
 
+# In[11]:
+
+
+t=linspace(0,100,50)
+x=randn(len(t))
+x2=randn(len(t))*2+1
+
+
+# In[14]:
+
+
+plot(t,x,'o-',label='Bob')
+plot(t,x2,'s-',label='Sally')
+legend()
+
+
 # In[ ]:
 
 
